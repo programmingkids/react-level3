@@ -1,25 +1,84 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
 
-function App() {
+/*
+App
+ ChildA
+  ChildB
+   ChildC
+ ChildD
+  ChildE
+*/
+
+const App = () => {
+  console.log("this is App");
+  
+  const [number, setNumber] = useState(0);
+  const handleClick = () => {
+    setNumber(number => number + 1);
+  };
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>App</div>
+      <div>number : {number}</div>
+      <div>
+        <button onClick={handleClick}>カウントアップ</button>
+      </div>
+      <ChildA />
+      <ChildD />
     </div>
   );
-}
+};
+
+const ChildA = () => {
+  console.log("this is ChildA");
+  
+  return (
+    <div className="childA">
+      <div>ChildA</div>
+      <ChildB />
+    </div>
+  );
+};
+
+const ChildB = () => {
+  console.log("this is ChildB");
+  
+  return (
+    <div className="childB">
+      <div>ChildB</div>
+      <ChildC />
+    </div>
+  );
+};
+
+const ChildC = () => {
+  console.log("this is ChildC");
+  
+  return (
+    <div className="childC">ChildC</div>
+  );
+};
+
+const ChildD = () => {
+  console.log("this is ChildD");
+  
+  return (
+    <div className="childD">
+      <div>ChildD</div>
+      <ChildE />
+    </div>
+  );
+};
+
+const ChildE = () => {
+  console.log("this is ChildE");
+  
+  return (
+    <div className="childE">ChildE</div>
+  );
+};
 
 export default App;
