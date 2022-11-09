@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import {MyProvider} from './components/providers/MyProvider';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

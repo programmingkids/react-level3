@@ -1,19 +1,18 @@
 import './App.css';
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 
 import {Title} from './components/blocks/Title';
 import {ControlBox} from './components/blocks/ControlBox';
 import {TableBox} from './components/blocks/TableBox';
-import {MyContext} from './components/providers/MyProvider';
 
 const App = React.memo(() => {
-  const {setList} = useContext(MyContext);
-  
   const [data, setData] = useState({
     item : '',
     price : '',
     amount : '',
   });
+  
+  const [list, setList] = useState([]);
   
   const handleChange = (event) => {
     const newData = {...data};
@@ -23,7 +22,7 @@ const App = React.memo(() => {
   
   const handleClick = (event) => {
     setList(list => list.concat(data));
-
+    
     setData({
       item : '',
       price : '',
@@ -39,7 +38,7 @@ const App = React.memo(() => {
         handleClick={handleClick}
         data={data}
       />
-      <TableBox />
+      <TableBox list={list} />
     </div>
   );
 });
