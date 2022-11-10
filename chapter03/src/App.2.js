@@ -4,10 +4,10 @@ import React, {useState, useContext} from 'react';
 import {Title} from './components/blocks/Title';
 import {ControlBox} from './components/blocks/ControlBox';
 import {TableBox} from './components/blocks/TableBox';
-import {MyContext} from './components/providers/MyProvider';
+import {ListContext} from './components/providers/ListProvider';
 
 const App = React.memo(() => {
-  const {setList} = useContext(MyContext);
+  const {setList} = useContext(ListContext);
   
   const [data, setData] = useState({
     item : '',

@@ -1,8 +1,8 @@
 import { useState, createContext } from 'react';
 
-export const MyContext = createContext({});
+export const ListContext = createContext({});
 
-export const MyProvider = (props) => {
+export const ListProvider = (props) => {
   const { children } = props;
   
   const [list, setList] = useState([]);
@@ -13,8 +13,8 @@ export const MyProvider = (props) => {
   };
 
   return (
-    <MyContext.Provider value={initialData}>
+    <ListContext.Provider value={initialData}>
       {children}
-    </MyContext.Provider>
+    </ListContext.Provider>
   );
 };

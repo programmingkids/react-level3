@@ -1,7 +1,7 @@
 import React from 'react';
 import {useContext} from 'react';
 
-import {MyContext} from './../providers/MyProvider';
+import {ListContext} from './../providers/ListProvider';
 
 export const TableBox = React.memo(() => (
   <table className="my-table">
@@ -30,7 +30,7 @@ const TableBody = React.memo(() => {
 });
 
 export const TableRow = React.memo(() => {
-  const {list} = useContext(MyContext);
+  const {list} = useContext(ListContext);
   return (
     <>
       {list.map(({item,price,amount}, index) => 
