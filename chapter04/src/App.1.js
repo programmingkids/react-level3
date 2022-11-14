@@ -1,18 +1,21 @@
+import logo from './logo.svg';
 import './App.css';
 import {useReducer} from 'react';
 
-const initialState = { count: 0 };
+const initialState = {count: 0};
 
-const reducer = (state, action) => {
+function reducer(state, action) {
   switch (action.type) {
     case 'increment':
       return {count: state.count + 1};
     case 'decrement':
       return {count: state.count - 1};
+    case 'reset':
+      return initialState;
     default:
       throw new Error();
   }
-};
+}
 
 function App() {
   return (
@@ -31,7 +34,8 @@ const Counter = () => {
       </div>
       <div>
         <button onClick={() => dispatch({type: 'decrement'})}>カウントダウン</button>
-        <button onClick={() => dispatch({type: 'increment'})}>カウントアップ</button>
+        <button onClick={() => dispatch({type: 'reset'})}>リセット</button>
+        <button onClick={() => dispatch({type: 'increment'})}>カウントリセット</button>
       </div>
     </>
   );
