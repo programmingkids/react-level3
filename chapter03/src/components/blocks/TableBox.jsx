@@ -1,12 +1,9 @@
 import React from 'react';
-import {useContext} from 'react';
 
-import {ListContext} from './../providers/ListProvider';
-
-export const TableBox = React.memo(() => (
+export const TableBox = React.memo(({list}) => (
   <table className="my-table">
     <TableHeader />
-    <TableBody />
+    <TableBody list={list} />
   </table>
 ));
 
@@ -21,16 +18,13 @@ export const TableHeader = React.memo(() => (
   </thead>
 ));
 
-const TableBody = React.memo(() => {
-  return (
+const TableBody = React.memo(({list}) => (
     <tbody>
-      <TableRow />
+      <TableRow list={list} />
     </tbody>
-  );
-});
+));
 
-export const TableRow = React.memo(() => {
-  const {list} = useContext(ListContext);
+export const TableRow = React.memo(({list}) => {
   return (
     <>
       {list.map(({item,price,amount}, index) => 
