@@ -3,6 +3,5 @@ import { FormEdit } from './../blocks/FormEdit';
 
 export const MemoEdit = () => (
   <>
-    <FormEdit />
   </>
 );

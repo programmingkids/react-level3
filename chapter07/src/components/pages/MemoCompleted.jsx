@@ -3,6 +3,5 @@ import { Memos } from './../blocks/Memos';
 
 export const MemoCompleted = () => (
   <>
-    <Memos completedFlag={true} />
   </>
 );

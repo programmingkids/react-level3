@@ -4,10 +4,5 @@ import { Title } from './../blocks/Title';
 
 export const Layout = () => {
   return (
-    <div className="container">
-      <Title>メモ帳アプリ</Title>
-      <Nav />
-      <Outlet />
-    </div>
   );
 };
