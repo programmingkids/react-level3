@@ -1,21 +1,25 @@
+import logo from './logo.svg';
 import './App.css';
-import { Title } from './components/blocks/Title';
-import { useGetItems } from './components/hooks/useGetItems';
 
-const App = () => {
-  const { items, onClickGetItems } = useGetItems();
-  
+function App() {
   return (
     <div className="App">
-      <Title>アイテム取得</Title>
-      <div>
-        <button onClick={onClickGetItems}>アイテム取得</button>
-        <div>
-          {items.map(item => <p key={item.id}>{item.id} : {item.name}</p>)}
-        </div>
-      </div>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
-};
+}
 
 export default App;
