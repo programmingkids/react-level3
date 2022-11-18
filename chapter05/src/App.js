@@ -1,21 +1,25 @@
+import logo from './logo.svg';
 import './App.css';
-import { AppProvider } from './components/providers/AppProvider';
-import { Title } from './components/blocks/Title';
-import { Header } from './components/blocks/Header';
-import { AddForm } from './components/blocks/AddForm';
-import { Tweets } from './components/blocks/Tweets';
 
-const App = () => {
+function App() {
   return (
     <div className="App">
-      <AppProvider>
-        <Title>つぶやき</Title>
-        <Header />
-        <AddForm />
-        <Tweets />
-      </AppProvider>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
-};
+}
 
 export default App;
